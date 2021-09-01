@@ -14,9 +14,9 @@ To build a serverless, progressive web application (PWA) with React using a test
 
 ## Key Features, Test Scenarios, and Gherkin
 * Filter events by city.
-** SCENARIO 1: WHEN USER HASN’T SEARCHED FOR A CITY, SHOW UPCOMING EVENTS FROM ALL CITIES.
-*** Given user hasn’t searched for any city
-*** When the user opens the app
+  * SCENARIO 1: WHEN USER HASN’T SEARCHED FOR A CITY, SHOW UPCOMING EVENTS FROM ALL CITIES.
+    * Given user hasn’t searched for any city
+    * When the user opens the app
 *** Then the user should see a list of all upcoming events
 ** SCENARIO 2: USER SHOULD SEE A LIST OF SUGGESTIONS WHEN THEY SEARCH FOR A CITY.
 *** Given the main page is open
