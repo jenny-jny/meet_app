@@ -17,57 +17,57 @@ To build a serverless, progressive web application (PWA) with React using a test
   * SCENARIO 1: WHEN USER HASN’T SEARCHED FOR A CITY, SHOW UPCOMING EVENTS FROM ALL CITIES.
     * Given user hasn’t searched for any city
     * When the user opens the app
-*** Then the user should see a list of all upcoming events
-** SCENARIO 2: USER SHOULD SEE A LIST OF SUGGESTIONS WHEN THEY SEARCH FOR A CITY.
-*** Given the main page is open
-*** When user starts typing in the city textbox
-*** Then the user should see a list of cities (suggestions) that match what they’ve typed
-** SCENARIO 3: USER CAN SELECT A CITY FROM THE SUGGESTED LIST.
-*** Given the user was typing “Berlin” in the city textbox and the list of suggested cities is showing
-*** When the user selects a city (e.g., “Berlin, Germany”) from the list
-*** Then their city should be changed to that city (i.e., “Berlin, Germany”) and the user should receive a list of upcoming events in that city
+    * Then the user should see a list of all upcoming events
+  * SCENARIO 2: USER SHOULD SEE A LIST OF SUGGESTIONS WHEN THEY SEARCH FOR A CITY.
+    * Given the main page is open
+    * When user starts typing in the city textbox
+    * Then the user should see a list of cities (suggestions) that match what they’ve typed
+  * SCENARIO 3: USER CAN SELECT A CITY FROM THE SUGGESTED LIST.
+    * Given the user was typing “Berlin” in the city textbox and the list of suggested cities is showing
+    * When the user selects a city (e.g., “Berlin, Germany”) from the list
+    * Then their city should be changed to that city (i.e., “Berlin, Germany”) and the user should receive a list of upcoming events in that city
 
 * Show/hide event details.
-** Scenario 1: An event element is collapsed by default
-*** Given the user was viewing the event element for the first time
-*** When the user scrolls down to a particular event
-*** Then the user will only see some details about the event
-** Scenario 2: User can expand an event to see its details
-*** Given the user had not clicked the show details button and the details about the event were not showing
-*** When the user clicks the show details button
-*** Then the user will see more details about the event
-** Scenario 3: User can collapse an event to hide its details
-*** Given the user had clicked the show details button and the details about the event were showing
-*** When the user clicks the hide details button
-*** Then the user will see less details about the event
+  * Scenario 1: An event element is collapsed by default
+    * Given the user was viewing the event element for the first time
+    * When the user scrolls down to a particular event
+    * Then the user will only see some details about the event
+  * Scenario 2: User can expand an event to see its details
+    * Given the user had not clicked the show details button and the details about the event were not showing
+    * When the user clicks the show details button
+    * Then the user will see more details about the event
+  * Scenario 3: User can collapse an event to hide its details
+    * Given the user had clicked the show details button and the details about the event were showing
+    * When the user clicks the hide details button
+    * Then the user will see less details about the event
 
 * Specify number of events.
-** Scenario 1: When user hasn’t specified a number, 32 is the default number
-*** Given the user did not specify a number of events to show
-*** When the user scrolls down to see the events
-*** Then the user will see 32 events
-** Scenario 2: User can change the number of events they want to see
-*** Given the user had not changed a number of events to show
-*** When the user types in the number of events
-*** Then the user will see the specified number of events
+  * Scenario 1: When user hasn’t specified a number, 32 is the default number
+    * Given the user did not specify a number of events to show
+    * When the user scrolls down to see the events
+    * Then the user will see 32 events
+  * Scenario 2: User can change the number of events they want to see
+    * Given the user had not changed a number of events to show
+    * When the user types in the number of events
+    * Then the user will see the specified number of events
 
 * Use the app when offline.
-** Scenario 1: Show cached data when there’s no internet connection
-*** Given the user did not have access to the internet
-*** When the user tries to open the app
-*** Then the user will be able to use the app normally
-** Scenario 2: Show error when user changes the settings (city, time range)
-*** Given the user changed the settings (city, time range)
-*** When the user opens the app and uses the relevant features
-*** Then the user will see a relevant error message 
+  * Scenario 1: Show cached data when there’s no internet connection
+    * Given the user did not have access to the internet
+    * When the user tries to open the app
+    * Then the user will be able to use the app normally
+  * Scenario 2: Show error when user changes the settings (city, time range)
+    * Given the user changed the settings (city, time range)
+    * When the user opens the app and uses the relevant features
+    * Then the user will see a relevant error message 
 
 * Add an app shortcut to the home screen.
 
 * View a chart showing the number of upcoming events by city.
-** Scenario 1: Show a chart with the number of upcoming events in each city
-*** Given the user specified a number of events
-*** When the user scrolls down to see the data visualization of the events
-*** Then the user will see a chart of upcoming events categorized by city
+  * Scenario 1: Show a chart with the number of upcoming events in each city
+    * Given the user specified a number of events
+    * When the user scrolls down to see the data visualization of the events
+    * Then the user will see a chart of upcoming events categorized by city
 
 ## Project Dependencies
 
