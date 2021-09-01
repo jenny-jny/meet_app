@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/jenny-jny/meet_app/static/css/main.a617e044.chunk.css",
+    "main.js": "/jenny-jny/meet_app/static/js/main.1703e878.chunk.js",
+    "main.js.map": "/jenny-jny/meet_app/static/js/main.1703e878.chunk.js.map",
+    "runtime-main.js": "/jenny-jny/meet_app/static/js/runtime-main.a67af793.js",
+    "runtime-main.js.map": "/jenny-jny/meet_app/static/js/runtime-main.a67af793.js.map",
+    "static/js/2.684f0c6f.chunk.js": "/jenny-jny/meet_app/static/js/2.684f0c6f.chunk.js",
+    "static/js/2.684f0c6f.chunk.js.map": "/jenny-jny/meet_app/static/js/2.684f0c6f.chunk.js.map",
+    "static/js/3.7fa1e8ae.chunk.js": "/jenny-jny/meet_app/static/js/3.7fa1e8ae.chunk.js",
+    "static/js/3.7fa1e8ae.chunk.js.map": "/jenny-jny/meet_app/static/js/3.7fa1e8ae.chunk.js.map",
+    "index.html": "/jenny-jny/meet_app/index.html",
+    "service-worker.js": "/jenny-jny/meet_app/service-worker.js",
+    "service-worker.js.map": "/jenny-jny/meet_app/service-worker.js.map",
+    "static/css/main.a617e044.chunk.css.map": "/jenny-jny/meet_app/static/css/main.a617e044.chunk.css.map",
+    "static/js/2.684f0c6f.chunk.js.LICENSE.txt": "/jenny-jny/meet_app/static/js/2.684f0c6f.chunk.js.LICENSE.txt",
+    "static/media/logo.103b5fa1.svg": "/jenny-jny/meet_app/static/media/logo.103b5fa1.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a67af793.js",
+    "static/js/2.684f0c6f.chunk.js",
+    "static/css/main.a617e044.chunk.css",
+    "static/js/main.1703e878.chunk.js"
+  ]
+}
