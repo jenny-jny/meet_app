@@ -23,9 +23,11 @@ To build a serverless, progressive web application (PWA) with React using a test
     * When user starts typing in the city textbox
     * Then the user should see a list of cities (suggestions) that match what they’ve typed
   * SCENARIO 3: USER CAN SELECT A CITY FROM THE SUGGESTED LIST.
-    * Given the user was typing “Berlin” in the city textbox and the list of suggested cities is showing
+    * Given the user was typing “Berlin” in the city textbox 
+    * And the list of suggested cities is showing
     * When the user selects a city (e.g., “Berlin, Germany”) from the list
-    * Then their city should be changed to that city (i.e., “Berlin, Germany”) and the user should receive a list of upcoming events in that city
+    * Then their city should be changed to that city (i.e., “Berlin, Germany”) 
+    * And the user should receive a list of upcoming events in that city
 
 * Show/hide event details.
   * Scenario 1: An event element is collapsed by default
@@ -33,11 +35,13 @@ To build a serverless, progressive web application (PWA) with React using a test
     * When the user scrolls down to a particular event
     * Then the user will only see some details about the event
   * Scenario 2: User can expand an event to see its details
-    * Given the user had not clicked the show details button and the details about the event were not showing
+    * Given the user had not clicked the show details button
+    * And the details about the event were not showing
     * When the user clicks the show details button
     * Then the user will see more details about the event
   * Scenario 3: User can collapse an event to hide its details
-    * Given the user had clicked the show details button and the details about the event were showing
+    * Given the user had clicked the show details button
+    * And the details about the event were showing
     * When the user clicks the hide details button
     * Then the user will see less details about the event
 
