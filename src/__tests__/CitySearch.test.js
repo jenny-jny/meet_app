@@ -7,4 +7,8 @@ describe('<CitySearch/> component', () => {
     const CitySearchWrapper = shallow(<CitySearch/>);
     expect(CitySearchWrapper.find('.city')).toHaveLength(1);
   });
+  test('render a list of suggestions', () => {
+    const CitySearchWrapper = shallow(<CitySearch/>);
+    expect(CitySearchWrapper.find('.suggestions')).toHaveLength(1);
+  });
 });
