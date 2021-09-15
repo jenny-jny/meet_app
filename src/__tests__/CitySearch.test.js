@@ -50,4 +50,11 @@ describe('<CitySearch/> component', () => {
     });
     expect(CitySearchWrapper.state('suggestions')).toEqual(filteredLocations); //suggestions state equal to filtered location
   });
+
+  test('selecting a suggestion should change query state', () => {
+    CitySearchWrapper.setState({query: 'Berlin'}); //initialize query state to Berlin
+    const suggestions = CitySearchWrapper.state('suggestions');
+    CitySearchWrapper.find('.suggestions li').at([0]).simulate('click'); //simulate click event at first suggestion list item
+    expect(CitySearchWrapper.state('query')).toBe(suggestions[0]); //expect query state to equal first object in suggestions state
+  });
 });
