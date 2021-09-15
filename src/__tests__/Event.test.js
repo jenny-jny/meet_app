@@ -10,6 +10,10 @@ describe('<Event/> component', () => {
     EventWrapper = shallow(<Event event = {mockData[0]}/>);
   });
 
+  test('state when never clicked on show details button is false', () => {
+    expect(EventWrapper.state('details')).toBe(false); 
+  });
+
   test('render event summary', () => {
     expect(EventWrapper.find('.summary')).toHaveLength(2);
   });
@@ -24,10 +28,6 @@ describe('<Event/> component', () => {
 
   test('render event location', () => {
     expect(EventWrapper.find('.location')).toHaveLength(1);
-  });
-
-  test('state when never clicked on show details button is false', () => {
-    expect(EventWrapper.state('details')).toBe(false); 
   });
 
   test('render show details button', () => {
