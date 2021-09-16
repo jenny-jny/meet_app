@@ -4,6 +4,8 @@ import App from '../App';
 import EventList from '../EventList';
 import CitySearch from '../CitySearch';
 import NumberOfEvents from '../NumberOfEvents';
+import {mockData} from '../mock-data';
+import {extractLocations} from '../api';
 
 describe('<App/> component', () => {
   let AppWrapper;
@@ -39,6 +41,21 @@ describe('<App/> integration', () => {
     const AppLocationsState = AppWrapper.state('locations');
     expect(AppLocationsState).not.toEqual(undefined);
     expect(AppWrapper.find(CitySearch).props().locations).toEqual(AppLocationsState);
+    AppWrapper.unmount();
+  });
+
+  test('get list of events matching the city selected by the user', async () => {
+    const AppWrapper = mount(<App/>);
+    const CitySearchWrapper = AppWrapper.find(CitySearch);
+    const locations = extractLocations(mockData); //extracted locations from mock data
+    CitySearchWrapper.setState({suggestions: locations}); //CitySearch component suggestions state equals to extracted locations
+    const suggestions = CitySearchWrapper.state('suggestions'); 
+    const selectedIndex = Math.floor(Math.random() * (suggestions.length)); //returns an integer between 0 (inclusive) to 2 (exclusive)
+    const selectedCity = suggestions[selectedIndex]; //selected location in suggestions state
+    await CitySearchWrapper.instance().handleItemClicked(selectedCity); //expected to have async code that fethes the full list of events
+    const allEvents = await getEvents(); //api function to get all events asynchronously
+    const eventsToShow = allEvents.filter(event => event.location === selectedCity); //filter all events to match selected location
+    expect(AppWrapper.state('events')).toEqual(eventsToShow); //events state equal to all events in selected location
     AppWrapper.unmount();
   });
 });
