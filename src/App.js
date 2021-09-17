@@ -3,7 +3,7 @@ import './App.css';
 import EventList from './EventList';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
-import {getEvents} from './api';
+import {extractLocations, getEvents} from './api';
 
 class App extends Component {
   state = {
@@ -30,6 +30,19 @@ class App extends Component {
         <NumberOfEvents/>
       </div>
     );
+  }
+
+  componentDidMount(){
+    this.mounted = true;
+    getEvents().then((events) => {
+      if(this.mounted){
+        this.setState({events, locations: extractLocations(events)});
+      }
+    });
+  }
+
+  componentWillUnmount(){
+    this.mounted = false;
   }
 }
 
