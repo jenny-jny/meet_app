@@ -26,7 +26,8 @@ To build a serverless, progressive web application (PWA) with React using a test
     * Given the user was typing “Berlin” in the city textbox 
     * And the list of suggested cities is showing
     * When the user selects a city (e.g., “Berlin, Germany”) from the list
-    * Then their city should be changed to that city (i.e., “Berlin, Germany”) 
+    * Then their city should be changed to that city (i.e., “Berlin, Germany”)
+    * And the list of suggestions should disappear 
     * And the user should receive a list of upcoming events in that city
 
 * Show/hide event details.
