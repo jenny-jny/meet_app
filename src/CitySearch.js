@@ -3,7 +3,8 @@ import React, {Component} from 'react';
 class CitySearch extends Component{
   state = {
     query: '',
-    suggestions: []
+    suggestions: [],
+    showSuggestions: undefined
   }
 
   handleInputChanged = (event) => {
@@ -22,7 +23,7 @@ class CitySearch extends Component{
   render(){
     return (
       <div className = "CitySearch">
-        <input type = "text" className = "city" value = {this.state.query} onChange = {this.handleInputChanged}/>
+        <input type = "text" className = "city" value = {this.state.query} onChange = {this.handleInputChanged} onFocus = {() => {this.setState({showSuggestions: true})}}/>
         <ul className = "suggestions">
           {this.state.suggestions.map((suggestion) => {
             return (
