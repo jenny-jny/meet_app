@@ -57,4 +57,10 @@ describe('<CitySearch/> component', () => {
     CitySearchWrapper.find('.suggestions li').at([0]).simulate('click'); //simulate click event at first suggestion list item
     expect(CitySearchWrapper.state('query')).toBe(suggestions[0]); //expect query state to equal first object in suggestions state
   });
+
+  test("selecting CitySearch input reveals the suggestions list", () => {
+    CitySearchWrapper.find('.city').simulate('focus');
+    expect(CitySearchWrapper.state('showSuggestions')).toBe(true);
+    expect(CitySearchWrapper.find('.suggestions').prop('style')).not.toEqual({display: 'none'});
+  });
 });
