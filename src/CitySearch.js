@@ -23,7 +23,7 @@ class CitySearch extends Component{
   render(){
     return (
       <div className = "CitySearch">
-        <input type = "text" className = "city" value = {this.state.query} onChange = {this.handleInputChanged} onFocus = {() => {this.setState({showSuggestions: true})}}/>
+        <input type = "text" className = "city" placeholder = "Search for a city" value = {this.state.query} onChange = {this.handleInputChanged} onFocus = {() => {this.setState({showSuggestions: true})}}/>
         <ul className = "suggestions" style = {this.state.showSuggestions ? {} : {display: 'none'}}>
           {this.state.suggestions.map((suggestion) => {
             return (
