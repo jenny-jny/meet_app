@@ -70,13 +70,13 @@ export const getEvents = async() => {
 };
 
 const removeQuery = () => {
-  if(window.history.pushState && window.location.pathname){
+  if(window.history.pushState && window.location.pathname){ //add an entry to the browser's session history stack
     var newurl =
       window.location.protocol +
       "//" +
       window.location.host +
       window.location.pathname;
-    window.history.pushState("", "", newurl);
+    window.history.pushState("", "", newurl); //history.pushState(state, title, [url])
   }else{
     newurl = window.location.protocol + 
     "//" + 
