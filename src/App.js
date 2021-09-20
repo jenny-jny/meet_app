@@ -9,26 +9,32 @@ import {extractLocations, getEvents} from './api';
 class App extends Component {
   state = {
     events: [],
-    locations: []
+    locations: [],
+    eventCount: 10
   }
 
-  updateEvents = location => {
+  updateEvents = (location, count) => {
     getEvents().then((events) => {
-      const locationEvents = (location === 'all')?
-        events:
+      const locationEvents = (location === 'all') ?
+        events :
         events.filter((event) => 
           event.location === location
         );
-        this.setState({events: locationEvents});
+      this.setState({events: locationEvents});
+      const numberEvents = (count === 10 ) ?
+        this.state.events.slice(0, 9) :
+        this.state.events.slice(0, count - 1);
+      this.setState({eventCount: numberEvents.length});
+      this.setState({events: numberEvents});
     }); 
   };
 
   render(){
     return (
       <div className = "App">
-        <EventList events = {this.state.events}/>
         <CitySearch locations = {this.state.locations} updateEvents = {this.updateEvents}/>
-        <NumberOfEvents/>
+        <NumberOfEvents eventCount = {this.state.eventCount} updateEvents = {this.updateEvents}/>
+        <EventList events = {this.state.events}/>
       </div>
     );
   }
