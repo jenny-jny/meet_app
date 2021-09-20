@@ -12,6 +12,7 @@ class NumberOfEvents extends Component{
       this.setState({message: 'Please enter a valid number'});
     }else{
       this.setState({query: value});
+      this.props.updateEvents('all', this.props.eventCount);
     }
   }
 
