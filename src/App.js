@@ -21,10 +21,8 @@ class App extends Component {
           event.location === location
         );
       this.setState({events: locationEvents});
-      const numberEvents = (count === 10 ) ?
-        this.state.events.slice(0, 9) :
-        this.state.events.slice(0, count - 1);
-      this.setState({eventCount: numberEvents.length});
+      const numberEvents = locationEvents.slice(0, count - 1);
+      this.setState({eventCount: count});
       this.setState({events: numberEvents});
     }); 
   };
