@@ -4,10 +4,10 @@ import {shallow} from 'enzyme';
 import NumberOfEvents from '../NumberOfEvents';
 
 describe('<NumberOfEvents/> component', () => {
-  let NumberOfEventsWrapper;
+  let NumberOfEventsWrapper, eventCount;
   
   beforeAll(() => {
-    NumberOfEventsWrapper = shallow(<NumberOfEvents/>);
+    NumberOfEventsWrapper = shallow(<NumberOfEvents eventCount = {eventCount} updateEvents = {() => {}}/>);
   });
 
   test('state when never entered number of events to show is 10', () => {
