@@ -2,13 +2,13 @@ import React, {Component} from 'react';
 
 class NumberOfEvents extends Component{
   state = {
-    query: 1,
+    query: 10,
     message: ''
   }
 
   handleInputChanged = (event) => {
     const value = event.target.value;
-    if(isNaN(value) || value < 0){
+    if(isNaN(value) || value < 0 || value === '0' || value.includes('.')){
       this.setState({message: 'Please enter a valid number'});
     }else{
       this.setState({query: value});
@@ -19,8 +19,8 @@ class NumberOfEvents extends Component{
     return (
       <div className = "NumberOfEvents" >
         <label className = "numberOfEventsLabel">Number of events: </label>
-        <span>
-          <input type = "number" className = "numberOfEvents" value = {this.state.query} onChange = {this.handleInputChanged}/>
+        <span >
+          <input type = "text" className = "numberOfEvents" value = {this.state.query} onChange = {this.handleInputChanged}/>
         </span> 
         <span>
           <p className = "errorMessage">{this.state.message}</p>
