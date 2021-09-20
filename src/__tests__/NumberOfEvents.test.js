@@ -10,8 +10,8 @@ describe('<NumberOfEvents/> component', () => {
     NumberOfEventsWrapper = shallow(<NumberOfEvents/>);
   });
 
-  test('state when never entered number of events to show is 32', () => {
-    expect(NumberOfEventsWrapper.state('query')).toBe('32'); 
+  test('state when never entered number of events to show is 10', () => {
+    expect(NumberOfEventsWrapper.state('query')).toBe(10); 
   });
 
   test('state when never entered number of events to show is empty string', () => {
@@ -48,8 +48,8 @@ describe('<NumberOfEvents/> component', () => {
     expect(NumberOfEventsWrapper.find('.errorMessage').text()).toEqual('Please enter a valid number');
   });
 
-  test('render error message correctly when enter an invalid number of events => -1', () => {
-    const eventObject = {target: {value: '-1'}};
+  test('render error message correctly when enter an invalid number of events => decimal', () => {
+    const eventObject = {target: {value: '0.1'}};
     NumberOfEventsWrapper.find('.numberOfEvents').simulate('change', eventObject);
     expect(NumberOfEventsWrapper.find('.errorMessage').text()).toEqual('Please enter a valid number');
   });
@@ -60,9 +60,22 @@ describe('<NumberOfEvents/> component', () => {
     expect(NumberOfEventsWrapper.find('.errorMessage').text()).toEqual('Please enter a valid number');
   });
 
+  test('render error message correctly when enter an invalid number of events => -1', () => {
+    const eventObject = {target: {value: '-1'}};
+    NumberOfEventsWrapper.find('.numberOfEvents').simulate('change', eventObject);
+    expect(NumberOfEventsWrapper.find('.errorMessage').text()).toEqual('Please enter a valid number');
+  });
+
   test('change error message state when enter an invalid number of events => a', () => {
     NumberOfEventsWrapper.setState({message: ''});
     const eventObject = {target: {value: 'a'}};
+    NumberOfEventsWrapper.find('.numberOfEvents').simulate('change', eventObject);
+    expect(NumberOfEventsWrapper.state('message')).toBe('Please enter a valid number');
+  });
+
+  test('change error message state when enter an invalid number of events => decimal', () => {
+    NumberOfEventsWrapper.setState({message: ''});
+    const eventObject = {target: {value: '0.1'}};
     NumberOfEventsWrapper.find('.numberOfEvents').simulate('change', eventObject);
     expect(NumberOfEventsWrapper.state('message')).toBe('Please enter a valid number');
   });
@@ -80,4 +93,5 @@ describe('<NumberOfEvents/> component', () => {
     NumberOfEventsWrapper.find('.numberOfEvents').simulate('change', eventObject);
     expect(NumberOfEventsWrapper.state('message')).toBe('Please enter a valid number');
   });
+
 });
