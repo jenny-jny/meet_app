@@ -67,4 +67,26 @@ describe('<App/> integration', () => {
     expect(AppWrapper.state('events')).toEqual(allEvents);
     AppWrapper.unmount();
   });
+
+  test('App passes "eventCount" state as a prop to NumberOfEvents', () => {
+    const AppWrapper = mount(<App/>);
+    const AppEventCountState = AppWrapper.state('eventCount');
+    expect(AppEventCountState).not.toEqual(undefined);
+    expect(AppWrapper.find(NumberOfEvents).props().eventCount).toEqual(AppEventCountState);
+    AppWrapper.unmount();
+  });
+
+  test('get list of events matching the number of events entered by the user', async() => {
+    const AppWrapper = mount(<App/>);
+    const NumberOfEventsWrapper = AppWrapper.find(NumberOfEvents);
+    const eventCount = mockData.length;
+    console.log(mockData.length); //2
+    NumberOfEventsWrapper.setState({query: eventCount}); //NumberOfEvents component query state equals to mockData length
+    const query = NumberOfEventsWrapper.state('query'); 
+    await NumberOfEventsWrapper.instance().handleInputChanged(mockData.length); //expected to have async code that fetches entered event count
+    const allEvents = await getEvents(); //api function to get all events asynchronously
+    const eventsToShow = allEvents.slice(0, query - 1); //filter all events to match entered event count
+    expect(AppWrapper.state('eventCount')).toEqual(eventsToShow.length); //eventCount state equal to entered event count
+    AppWrapper.unmount();
+  });
 });
