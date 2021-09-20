@@ -20,7 +20,7 @@ class NumberOfEvents extends Component{
       <div className = "NumberOfEvents" >
         <label className = "numberOfEventsLabel">Number of events: </label>
         <span>
-          <input type = "text" className = "numberOfEvents" value = {this.state.query} onChange = {this.handleInputChanged}/>
+          <input type = "number" className = "numberOfEvents" value = {this.state.query} onChange = {this.handleInputChanged}/>
         </span> 
         <span>
           <p className = "errorMessage">{this.state.message}</p>
