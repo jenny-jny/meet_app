@@ -13,16 +13,16 @@ class App extends Component {
     eventCount: 10
   }
 
-  updateEvents = (location, count) => {
+  updateEvents = (location, eventCount) => {
     getEvents().then((events) => {
       const locationEvents = (location === 'all') ?
-        events.slice(0, count) :
+        events.slice(0, eventCount) :
         events.filter((event) => 
           event.location === location
-        ).slice(0, count);
+        ).slice(0, eventCount);
       this.setState({events: locationEvents});
       // const numberEvents = locationEvents.slice(0, count);
-      this.setState({eventCount: count});
+      this.setState({eventCount: eventCount});
       // this.setState({events: numberEvents});
       console.log('upon loading page');
     }); 
