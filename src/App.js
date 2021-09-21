@@ -24,6 +24,7 @@ class App extends Component {
       // const numberEvents = locationEvents.slice(0, count);
       this.setState({eventCount: count});
       // this.setState({events: numberEvents});
+      console.log('upon loading page');
     }); 
   };
 
