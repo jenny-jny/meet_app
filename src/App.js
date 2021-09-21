@@ -16,14 +16,14 @@ class App extends Component {
   updateEvents = (location, count) => {
     getEvents().then((events) => {
       const locationEvents = (location === 'all') ?
-        events :
+        events.slice(0, count) :
         events.filter((event) => 
           event.location === location
-        );
+        ).slice(0, count);
       this.setState({events: locationEvents});
-      const numberEvents = locationEvents.slice(0, count);
+      // const numberEvents = locationEvents.slice(0, count);
       this.setState({eventCount: count});
-      this.setState({events: numberEvents});
+      // this.setState({events: numberEvents});
     }); 
   };
 
