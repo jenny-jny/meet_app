@@ -85,7 +85,7 @@ describe('<App/> integration', () => {
     const query = NumberOfEventsWrapper.state('query'); 
     await NumberOfEventsWrapper.instance().handleInputChanged(query); //expected to have async code that fetches entered event count
     const allEvents = await getEvents(); //api function to get all events asynchronously
-    const eventsToShow = allEvents.slice(0, query); //filter all events to match entered event count
+    const eventsToShow = allEvents.slice(0, query.target.value); //filter all events to match entered event count
     // expect(AppWrapper.state('events').length).toEqual(eventsToShow.length); //eventCount state equal to entered event count
     expect(AppWrapper.state('eventCount')).toEqual(eventsToShow.length);
     AppWrapper.unmount();
