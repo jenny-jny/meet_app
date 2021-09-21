@@ -21,7 +21,7 @@ class App extends Component {
           event.location === location
         );
       this.setState({events: locationEvents});
-      const numberEvents = locationEvents.slice(0, count - 1);
+      const numberEvents = locationEvents.slice(0, count);
       this.setState({eventCount: count});
       this.setState({events: numberEvents});
     }); 
