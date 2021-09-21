@@ -7,8 +7,9 @@ class NumberOfEvents extends Component{
   }
 
   handleInputChanged = (event) => {
+    // const value = event.target.value;
     const value = event.target.value;
-    if(isNaN(value) || value < 0 || value === '0' || value.includes('.')){
+    if(isNaN(value) || value < 0 || value === '0' || (value + '').includes('.')){
       this.setState({message: 'Please enter a valid number'});
     }else{
       this.setState({query: value});
