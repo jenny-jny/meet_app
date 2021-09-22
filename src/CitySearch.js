@@ -13,13 +13,13 @@ class CitySearch extends Component{
       return location.toUpperCase().indexOf(value.toUpperCase()) > -1;
     });
     this.setState({query: value, suggestions});
-    this.props.updateEvents(value, 10);
+    this.props.updateEvents(value, -1);
     console.log('end of city input change');
   }
 
   handleItemClicked = (suggestion) => {
     this.setState({query: suggestion, showSuggestions: false});
-    this.props.updateEvents(suggestion, 10);
+    this.props.updateEvents(suggestion, -1);
     console.log('end of city item click');
   }
  

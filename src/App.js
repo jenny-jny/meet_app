@@ -22,6 +22,10 @@ class App extends Component {
         events.filter((event) => 
           event.location === location
         );
+      const {eventCount} = this.state;
+      if(count === -1){
+        count = eventCount;
+      }
       eventsToShow = eventsToShow.slice(0, count);
       this.setState({
         events: eventsToShow,
