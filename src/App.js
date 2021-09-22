@@ -28,16 +28,6 @@ class App extends Component {
     }); 
   };
 
-  render(){
-    return (
-      <div className = "App">
-        <CitySearch locations = {this.state.locations} updateEvents = {(location, count) => this.updateEvents(location, count)}/>
-        <NumberOfEvents eventCount = {this.state.eventCount} updateEvents = {(location, count) => this.updateEvents(location, count)}/>
-        <EventList events = {this.state.events}/>
-      </div>
-    );
-  }
-
   componentDidMount(){
     this.mounted = true;
     getEvents().then((events) => {
@@ -49,6 +39,16 @@ class App extends Component {
 
   componentWillUnmount(){
     this.mounted = false;
+  }
+
+  render(){
+    return (
+      <div className = "App">
+        <CitySearch locations = {this.state.locations} updateEvents = {(location, count) => this.updateEvents(location, count)}/>
+        <NumberOfEvents eventCount = {this.state.eventCount} updateEvents = {(location, count) => this.updateEvents(location, count)}/>
+        <EventList events = {this.state.events}/>
+      </div>
+    );
   }
 }
 
