@@ -5,6 +5,7 @@ import EventList from './EventList';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
 import {extractLocations, getEvents} from './api';
+import { getByLabelText } from '@testing-library/react';
 
 class App extends Component {
   state = {
@@ -16,12 +17,12 @@ class App extends Component {
 
   updateEvents = (location, count) => {
     getEvents().then((events) => {
-      const eventsToShow = (location === 'all') ?
+      let eventsToShow = (location === 'all') ?
         events :
         events.filter((event) => 
           event.location === location
         );
-      eventsToShow.slice(0, count);
+      eventsToShow = eventsToShow.slice(0, count);
       this.setState({
         events: eventsToShow,
         eventCount: count,
