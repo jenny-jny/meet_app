@@ -67,8 +67,7 @@ export const getEvents = async() => {
     }
     NProgress.done();
     console.log('upon loading page 2');
-    return result.data.events.slice(0, 10);
-    //how to track eventCount 
+    return result.data.events;
   }
 };
 
