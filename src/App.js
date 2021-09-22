@@ -31,9 +31,9 @@ class App extends Component {
     }); 
   };
 
-  updateNumberOfEvents(count){
+  updateNumberOfEvents = newCount => {
     const {currentLocation} = this.state;
-    this.updateEvents(currentLocation, count);
+    this.updateEvents(currentLocation, newCount);
   }
 
   componentDidMount(){
