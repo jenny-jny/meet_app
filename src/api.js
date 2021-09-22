@@ -21,7 +21,6 @@ export const getAccessToken = async() => {
       const results = await axios.get( //redirect to Google authorization screen to get the autorization code
         "https://qeobgl0ka7.execute-api.us-east-2.amazonaws.com/dev/api/get-auth-url"
       );
-      console.log('upon loading page 1');
       const {authUrl} = results.data;
       return (window.location.href = authUrl);
     }
@@ -66,7 +65,6 @@ export const getEvents = async() => {
       localStorage.setItem("locations", JSON.stringify(locations));
     }
     NProgress.done();
-    console.log('upon loading page 2');
     return result.data.events;
   }
 };
