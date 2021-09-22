@@ -5,7 +5,6 @@ import EventList from './EventList';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
 import {extractLocations, getEvents} from './api';
-import { getByLabelText } from '@testing-library/react';
 
 class App extends Component {
   state = {
