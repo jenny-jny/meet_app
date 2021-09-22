@@ -47,10 +47,10 @@ To build a serverless, progressive web application (PWA) with React using a test
     * Then the user will see less details about the event
 
 * Specify number of events.
-  * Scenario 1: When user hasn’t specified a number, 32 is the default number
+  * Scenario 1: When user hasn’t specified a number, 10 is the default number
     * Given the user did not specify a number of events to show
     * When the user scrolls down to see the events
-    * Then the user will see 32 events
+    * Then the user will see 10 events
   * Scenario 2: User can change the number of events they want to see
     * Given the user had not changed a number of events to show
     * When the user types in the number of events
