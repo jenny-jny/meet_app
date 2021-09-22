@@ -32,7 +32,7 @@ class App extends Component {
         eventCount: count,
         currentLocation: location
       });
-      console.log('events updated' + location + ' | ' + count);
+      console.log('location and number of events updated ' + location + ' | ' + count);
     }); 
   };
 
