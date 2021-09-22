@@ -13,6 +13,7 @@ class NumberOfEvents extends Component{
     }else{
       this.setState({query: value});
       this.props.updateNumberOfEvents(value);
+      console.log('input changed');
     }
   }
 

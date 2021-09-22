@@ -27,13 +27,14 @@ class App extends Component {
         eventCount: count,
         currentLocation: location
       });
-      console.log('upon loading page');
+      console.log('events updated' + location + ' | ' + count);
     }); 
   };
 
   updateNumberOfEvents = newCount => {
     const {currentLocation} = this.state;
     this.updateEvents(currentLocation, newCount);
+    console.log('number of events updated');
   }
 
   componentDidMount(){
