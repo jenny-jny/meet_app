@@ -38,7 +38,7 @@ class Event extends Component{
         {this.state.details === true && 
           <div className = "expanded">
             <h2 className = "aboutEvent">About event: </h2>
-            <link className = "googleCalendar" href = {event.htmlLink}>See details on Google Calendar</link>
+            <a className = "googleCalendar" href = {event.htmlLink}>See details on Google Calendar</a>
             <p className = "description">{event.description}</p>
             <button className = "hideDetails" onClick = {() => this.handleHideDetailsClicked()}>hide details</button>
           </div>
