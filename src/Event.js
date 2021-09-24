@@ -5,13 +5,9 @@ class Event extends Component{
     details: false
   }
 
-  handleShowDetailsClicked(){
-    this.setState({details: true});
-  }
-
-  handleHideDetailsClicked(){
-    this.setState({details: false});
-  }
+  handleDetailsButtonClicked = () => {
+    this.setState((prevState) => ({ details: !prevState.details }));
+  };
 
   render(){
     const {event} = this.props;
@@ -32,7 +28,7 @@ class Event extends Component{
             <span className = "location">{event.location}</span>
           </div>
           {this.state.details === false &&
-            <button className = "showDetails" onClick = {() => this.handleShowDetailsClicked()}>show details</button>
+            <button className = "showDetails" onClick = {() => this.handleDetailsButtonClicked()}>show details</button>
           } 
         </div>
         {this.state.details === true && 
@@ -40,7 +36,7 @@ class Event extends Component{
             <h2 className = "aboutEvent">About event: </h2>
             <a className = "googleCalendar" href = {event.htmlLink}>See details on Google Calendar</a>
             <p className = "description">{event.description}</p>
-            <button className = "hideDetails" onClick = {() => this.handleHideDetailsClicked()}>hide details</button>
+            <button className = "hideDetails" onClick = {() => this.handleDetailsButtonClicked()}>hide details</button>
           </div>
         }
       </>
