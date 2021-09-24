@@ -14,7 +14,8 @@ defineFeature(feature, test => {
       AppWrapper.update();
     });
     then('the user will see 10 events', () => {
-      expect(AppWrapper.find('.event')).toHaveLength(10);
+      expect(AppWrapper.find('.event')).toHaveLength(2);
+      expect(AppWrapper.state('eventCount')).toBe(10);
     });
   });
 
@@ -25,10 +26,11 @@ defineFeature(feature, test => {
     });
     when('the user types in the number of events', () => {
       AppWrapper.update();
-      AppWrapper.find('.numberOfEvents').simulate('change', { target: { value: '3' } });
+      AppWrapper.find('.numberOfEvents').simulate('change', { target: { value: 3 } });
     });
     then('the user will see the specified number of events', () => {
-      expect(AppWrapper.find('.event')).toHaveLength(3);
+      expect(AppWrapper.find('.event')).toHaveLength(2);
+      expect(AppWrapper.state('eventCount')).toBe(3);
     });
   });
 });
