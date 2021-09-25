@@ -24,7 +24,7 @@ class Event extends Component{
           <div className = "line2">
             <span>@</span>
             <span className = "summary">{event.summary}</span>
-            <span>|</span>
+            <span> | </span>
             <span className = "location">{event.location}</span>
           </div>
           {this.state.details === false &&
