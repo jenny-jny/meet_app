@@ -1,4 +1,3 @@
-import { render } from '@testing-library/react';
 import React, {Component} from 'react';
 
 class Alert extends Component{
@@ -29,4 +28,11 @@ class InfoAlert extends Alert{
   }
 }
 
-export {InfoAlert};
+class ErrorAlert extends Alert{
+  constructor(props){
+    super(props);
+    this.color = 'red';
+  }
+}
+
+export {InfoAlert, ErrorAlert};
