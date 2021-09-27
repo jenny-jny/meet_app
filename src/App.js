@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
 import './App.css';
 import './nprogress.css';
-import EventList from './EventList';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
+import {WarningAlert} from './Alert';
+import EventList from './EventList';
 import {extractLocations, getEvents} from './api';
 
 class App extends Component {
@@ -11,7 +12,8 @@ class App extends Component {
     events: [],
     locations: [],
     eventCount: 10,
-    currentLocation: 'all'
+    currentLocation: 'all',
+    infoText: undefined
   }
 
   updateEvents = (location, count) => {
@@ -60,6 +62,9 @@ class App extends Component {
       <div className = "App">
         <CitySearch locations = {this.state.locations} updateEvents = {(location, count) => this.updateEvents(location, count)}/>
         <NumberOfEvents updateNumberOfEvents = {(newCount) => this.updateNumberOfEvents(newCount)}/>
+        {!navigator.onLine && this.setState({infoText: 'Offline: events loaded from cache and may not be up to date'}) && 
+          <WarningAlert text = {this.state.infoText}/>
+        }
         <EventList events = {this.state.events}/>
       </div>
     );
