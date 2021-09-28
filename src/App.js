@@ -11,6 +11,7 @@ import {extractLocations, getAccessToken, checkToken, getEvents} from './api';
 class App extends Component {
   state = {
     showWelcomeScreen: undefined,
+    infoText: undefined,
     events: [],
     locations: [],
     eventCount: 10,
@@ -44,6 +45,10 @@ class App extends Component {
     console.log('number of events updated');
   }
 
+  setWarningMessage = () => {
+    this.setState({infoText: 'Offline: events loaded from cache and may not be up to date'});
+  }
+
   async componentDidMount(){
     this.mounted = true;
     const {eventCount} = this.state;
@@ -72,7 +77,7 @@ class App extends Component {
         <CitySearch locations = {this.state.locations} updateEvents = {(location, count) => this.updateEvents(location, count)}/>
         <NumberOfEvents updateNumberOfEvents = {(newCount) => this.updateNumberOfEvents(newCount)}/>
         {!navigator.onLine && 
-          <WarningAlert text = 'Offline: events loaded from cache and may not be up to date'/>
+          <WarningAlert text = {() => this.setWarningMessage()}/>
         }
         <EventList events = {this.state.events}/>
         <WelcomeScreen showWelcomeScreen = {this.state.showWelcomeScreen} getAccessToken = {() => getAccessToken()}/>
