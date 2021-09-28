@@ -68,13 +68,16 @@ class App extends Component {
 
   render(){
     if(this.state.showWelcomeScreen === undefined) return <div className = "App"/>
+    if(!navigator.onLine){
+      this.setState({infoText: 'Offline: events loaded from cache and may not be up to date'});
+      return (
+        <WarningAlert text = {this.state.infoText}/>
+      );
+    }
     return (
       <div className = "App">
         <CitySearch locations = {this.state.locations} updateEvents = {(location, count) => this.updateEvents(location, count)}/>
         <NumberOfEvents updateNumberOfEvents = {(newCount) => this.updateNumberOfEvents(newCount)}/>
-        {!navigator.onLine && this.setState({infoText: 'Offline: events loaded from cache and may not be up to date'}) && 
-          <WarningAlert text = {this.state.infoText}/>
-        }
         <EventList events = {this.state.events}/>
         <WelcomeScreen showWelcomeScreen = {this.state.showWelcomeScreen} getAccessToken = {() => getAccessToken()}/>
       </div>
