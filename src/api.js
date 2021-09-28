@@ -9,7 +9,7 @@ export const extractLocations = (events) => {
   return locations;
 };
 
-export const getAccessToken = async() => {
+export const getAccessToken = async () => {
   const accessToken = localStorage.getItem('access_token');
   const tokenCheck = accessToken && (await checkToken(accessToken)); //access token check
 
@@ -29,7 +29,7 @@ export const getAccessToken = async() => {
   return accessToken;
 }
 
-export const checkToken = async(accessToken) => {
+export const checkToken = async (accessToken) => {
   const result = await fetch(
     `https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=${accessToken}`
   ).then((res) => res.json()).catch((error) => error.json());
@@ -39,7 +39,7 @@ export const checkToken = async(accessToken) => {
 const getToken = async(code) => { //from authorization code
   const encodeCode = encodeURIComponent(code);
   const {access_token} = await fetch(
-    'https://qeobgl0ka7.execute-api.us-east-2.amazonaws.com/dev/api/token' + '/' + encodeCode
+    `https://qeobgl0ka7.execute-api.us-east-2.amazonaws.com/dev/api/token/${encodeCode}`
   ).then((res) => {
     return res.json();
   }).catch((error) => error);
@@ -47,7 +47,7 @@ const getToken = async(code) => { //from authorization code
   return access_token;
 };
 
-export const getEvents = async() => {
+export const getEvents = async () => {
   NProgress.start();
   if(window.location.href.startsWith('http://localhost')){
     NProgress.done();
@@ -63,7 +63,7 @@ export const getEvents = async() => {
   const token = await getAccessToken();
   if(token){
     removeQuery();
-    const url = 'https://qeobgl0ka7.execute-api.us-east-2.amazonaws.com/dev/api/get-events' + '/' + token;
+    const url = `https://qeobgl0ka7.execute-api.us-east-2.amazonaws.com/dev/api/get-events/${token}`;
     const result = await axios.get(url);
     if(result.data){
       var locations = extractLocations(result.data.events);
