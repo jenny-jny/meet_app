@@ -17,7 +17,7 @@ class App extends Component {
     locations: [],
     eventCount: 10,
     currentLocation: 'all'
-  }
+  };
 
   updateEvents = (location, count) => {
     getEvents().then((events) => {
@@ -44,7 +44,7 @@ class App extends Component {
     const {currentLocation} = this.state;
     this.updateEvents(currentLocation, newCount);
     console.log('number of events updated');
-  }
+  };
 
   getData = () => {
     const {locations, events} = this.state;
@@ -54,7 +54,7 @@ class App extends Component {
       return {city, number};
     });
     return data;
-  }
+  };
 
   async componentDidMount(){
     this.mounted = true;
@@ -104,6 +104,7 @@ class App extends Component {
         </ResponsiveContainer>
         <EventList events = {events}/>
         <WelcomeScreen showWelcomeScreen = {showWelcomeScreen} getAccessToken = {() => getAccessToken()}/>
+        {console.log(events)}
       </div>
     );
   }
