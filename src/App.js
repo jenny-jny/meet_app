@@ -5,7 +5,7 @@ import WelcomeScreen from './WelcomeScreen';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
 import {WarningAlert} from './Alert';
-import {EventGenre} from './EventGenre';
+import EventGenre from './EventGenre';
 import EventList from './EventList';
 import {extractLocations, getAccessToken, checkToken, getEvents} from './api';
 import {ResponsiveContainer, CartesianGrid, Scatter, ScatterChart, Tooltip, XAxis, YAxis} from 'recharts';
