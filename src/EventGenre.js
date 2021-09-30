@@ -9,7 +9,9 @@ const EventGenre = ({events}) => {
   
   function getData(){
     const data = genres.map(genre => {
-      const value = events.summary.filter(sum => sum.split(' ').includes(genre)).length;
+      const value = events.map(event => {
+        return event.summary.filter(sum => sum.split(' ').includes(genre)).length;
+      });
       return {name: genre, value};
     });
     return data;
