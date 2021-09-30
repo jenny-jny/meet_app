@@ -1,5 +1,5 @@
 # meet_app
-Latest update: 09.01.2021
+Latest update: 09.29.2021
 
 ## Project Description
 To build a serverless, progressive web application (PWA) with React using a test-driven development (TDD) technique. The application uses the Google Calendar API to fetch upcoming events.
@@ -75,8 +75,29 @@ To build a serverless, progressive web application (PWA) with React using a test
     * Then the user will see a chart of upcoming events categorized by city
 
 ## Project Dependencies
+Google Calendar API
 
 ## Technical Requirements
+* JavaScript ES6
+* React
+* npm
+* TDD
+* Unit testing
+* Jest
+* Enzyme
+* Integration testing
+* Acceptance testing
+* End-to-end testing
+* Jest
+* Puppeteer
+* Cucumber
+* APM - Attatus
+* W3C Validation
+* recharts
+* axios
+* NProgress
+* ESLint
+* Prettier
 
 ## Project Showcase
 https://jenny-jny.github.io/meet_app/
