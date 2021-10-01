@@ -80,6 +80,7 @@ Google Calendar API
 ## Technical Requirements
 * JavaScript ES6
 * React
+* AWS Lambda
 * npm
 * TDD
 * Unit testing
