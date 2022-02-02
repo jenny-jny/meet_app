@@ -14,6 +14,8 @@ To build a serverless, progressive web application (PWA) with React using a test
 
 ## Key Features, Test Scenarios, and Gherkin
 * Filter events by city.
+
+
   * SCENARIO 1: WHEN USER HASN’T SEARCHED FOR A CITY, SHOW UPCOMING EVENTS FROM ALL CITIES.
     * Given user hasn’t searched for any city
     * When the user opens the app
@@ -31,6 +33,8 @@ To build a serverless, progressive web application (PWA) with React using a test
     * And the user should receive a list of upcoming events in that city
 
 * Show/hide event details.
+
+
   * Scenario 1: An event element is collapsed by default
     * Given the user was viewing the event element for the first time
     * When the user scrolls down to a particular event
@@ -47,6 +51,8 @@ To build a serverless, progressive web application (PWA) with React using a test
     * Then the user will see less details about the event
 
 * Specify number of events.
+
+
   * Scenario 1: When user hasn’t specified a number, 10 is the default number
     * Given the user did not specify a number of events to show
     * When the user scrolls down to see the events
@@ -57,6 +63,8 @@ To build a serverless, progressive web application (PWA) with React using a test
     * Then the user will see the specified number of events
 
 * Use the app when offline.
+
+
   * Scenario 1: Show cached data when there’s no internet connection
     * Given the user did not have access to the internet
     * When the user tries to open the app
@@ -69,6 +77,8 @@ To build a serverless, progressive web application (PWA) with React using a test
 * Add an app shortcut to the home screen.
 
 * View a chart showing the number of upcoming events by city.
+
+
   * Scenario 1: Show a chart with the number of upcoming events in each city
     * Given the user specified a number of events
     * When the user scrolls down to see the data visualization of the events
