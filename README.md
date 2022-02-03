@@ -98,7 +98,7 @@ Google Calendar API
 * Jest testing framework (unit testing, integration testing)
 * Enzyme
 * Cucumber testing framework (acceptance testing)
-* Puppeteer
+* Puppeteer testing framework (end-to-end testing)
 * Object Oriented Programming (OOP)
 * Attatus (online APM tool)
 * data visualization
