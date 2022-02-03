@@ -74,7 +74,25 @@ A serverless, progressive web application (PWA) built with React using test-driv
     * When the user scrolls down to see the data visualization of the events
     * Then the user will see a chart of the number of upcoming events categorized by city
 
-## Project Dependencies
+## Set Up
+### Install dependencies
+```
+npm install
+```
+### Run in browser
+```
+npm run start
+```
+### Run tests
+```
+npm run test
+```
+### Check test coverage
+```
+npm test -- --coverage
+```
+
+## Project Dependency
 Google Calendar API
 
 ## Technical Requirements
@@ -104,6 +122,9 @@ Google Calendar API
 * data visualization
 * recharts
 * NProgress
+
+## Development Environment
+Visual Studio Code
 
 ## Project Showcase
 https://jenny-jny.github.io/meet_app/
