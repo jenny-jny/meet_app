@@ -78,25 +78,34 @@ To build a serverless, progressive web application (PWA) with React using a test
 Google Calendar API
 
 ## Technical Requirements
+* npm
 * JavaScript ES6
 * React
-* AWS Lambda
-* npm
-* TDD
-* Unit testing
-* Jest
+* React axios
+* async/await
+* Progressive Web Application (PWA)
+* Lighthouse's PWA checklist
+* service worker
+* AWS Lambda (serverless functions)
+* Google Calendar API
+* OAuth2 authentication flow
+* Behavior Driven Development (BDD)
+* Gherkin
+* Test Driven Development (TDD)
+* unit testing
+* integration testing
+* acceptance testing
+* end-to-end testing
+* Jest testing framework (unit testing, integration testing)
 * Enzyme
-* Integration testing
-* Acceptance testing
-* End-to-end testing
-* Jest
+* Cucumber testing framework (acceptance testing)
 * Puppeteer
-* Cucumber
-* APM - Attatus
-* W3C Validation
+* Object Oriented Programming (OOP)
+* Attatus (online APM tool)
+* data visualization
 * recharts
-* axios
 * NProgress
+* W3C Validation
 * ESLint
 * Prettier
 
