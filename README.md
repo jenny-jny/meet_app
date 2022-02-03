@@ -13,9 +13,7 @@ To build a serverless, progressive web application (PWA) with React using a test
 * As a user, I would like to be able to see a chart showing the upcoming events in each city so that I know what events are organized in which city.
 
 ## Key Features, Test Scenarios, and Gherkin
-* Filter events by city.
-
-
+* Filter events by city. <br/><br/>
   * Scenario 1: When user hasn't searched for a city, show upcoming events from all cities.
     * Given user hasn’t searched for any city
     * When the user opens the app
@@ -31,10 +29,8 @@ To build a serverless, progressive web application (PWA) with React using a test
     * Then their city should be changed to that city (i.e., “Berlin, Germany”)
     * And the list of suggestions should disappear 
     * And the user should receive a list of upcoming events in that city
-
-* Show/hide event details.
-
-
+---
+* Show/hide event details. <br/><br/>
   * Scenario 1: An event element is collapsed by default
     * Given the user was viewing the event element for the first time
     * When the user scrolls down to a particular event
@@ -49,10 +45,8 @@ To build a serverless, progressive web application (PWA) with React using a test
     * And the details about the event were showing
     * When the user clicks the hide details button
     * Then the user will see less details about the event
-
-* Specify number of events.
-
-
+---
+* Specify number of events. <br/><br/>
   * Scenario 1: When user hasn’t specified a number, 10 is the default number
     * Given the user did not specify a number of events to show
     * When the user scrolls down to see the events
@@ -61,10 +55,8 @@ To build a serverless, progressive web application (PWA) with React using a test
     * Given the user had not changed a number of events to show
     * When the user types in the number of events
     * Then the user will see the specified number of events
-
-* Use the app when offline.
-
-
+---
+* Use the app when offline. <br/><br/>
   * Scenario 1: Show cached data when there’s no internet connection
     * Given the user did not have access to the internet
     * When the user tries to open the app
@@ -73,12 +65,10 @@ To build a serverless, progressive web application (PWA) with React using a test
     * Given the user changed the settings (city, time range)
     * When the user opens the app and uses the relevant features
     * Then the user will see a relevant error message 
-
+---
 * Add an app shortcut to the home screen.
-
-* View a chart showing the number of upcoming events by city.
-
-
+---
+* View a chart showing the number of upcoming events by city. <br/><br/>
   * Scenario 1: Show a chart with the number of upcoming events in each city
     * Given the user specified a number of events
     * When the user scrolls down to see the data visualization of the events
