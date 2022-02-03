@@ -14,13 +14,13 @@ To build a serverless, progressive web application (PWA) with React using a test
 
 ## Key Features, Test Scenarios, and Gherkin
 * Filter events by city. <br/><br/>
-  * Scenario 1: When user hasn't searched for a city, show upcoming events from all cities.
+  * Scenario 1: Show upcoming events from all cities when user hasn't searched for a city
     * Given no cities had been searched
     * When the user opens the app
     * Then the user should see a list of all upcoming events
-  * Scenario 2: User should see a list of suggestions when they search for a city.
+  * Scenario 2: A list of suggestions shows when user searches for a city
     * Given the main page is open
-    * When user starts typing in the city textbox
+    * When the user starts typing in the city textbox
     * Then the user should see a list of cities (suggestions) that match what they’ve typed
   * Scenario 3: User can select a city from the suggested list.
     * Given “Berlin” is being typed in the city textbox 
@@ -47,7 +47,7 @@ To build a serverless, progressive web application (PWA) with React using a test
     * Then the user will see less details about the event
 ---
 * Specify number of events. <br/><br/>
-  * Scenario 1: When user hasn’t specified a number, 10 is the default number
+  * Scenario 1: 10 is the default number of events when user has not specified a number
     * Given the number of events to show had not been specified
     * When the user scrolls down to see the events
     * Then the user will see 10 events
@@ -57,10 +57,10 @@ To build a serverless, progressive web application (PWA) with React using a test
     * Then the user will see the specified number of events
 ---
 * Use the app when offline. <br/><br/>
-  * Scenario 1: Show cached data when there’s no internet connection
-    * Given the internet had not been accessed
+  * Scenario 1: Show cached data when there is no internet connection
+    * Given there was no access to the internet
     * When the user tries to open the app
-    * Then the user will be able to use the app normally
+    * Then the user will be able to use the app normally with cached data
   * Scenario 2: Show error when user changes the settings (city, time range)
     * Given the settings (city, time range) had been changed
     * When the user opens the app and uses the relevant features
@@ -72,7 +72,7 @@ To build a serverless, progressive web application (PWA) with React using a test
   * Scenario 1: Show a chart with the number of upcoming events in each city
     * Given the number of events had been specified
     * When the user scrolls down to see the data visualization of the events
-    * Then the user will see a chart of upcoming events categorized by city
+    * Then the user will see a chart of the number of upcoming events categorized by city
 
 ## Project Dependencies
 Google Calendar API
