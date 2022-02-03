@@ -1,5 +1,5 @@
 # meet_app
-Latest update: 09.29.2021
+Latest update: 02.03.2022
 
 ## Project Description
 To build a serverless, progressive web application (PWA) with React using a test-driven development (TDD) technique. The application uses the Google Calendar API to fetch upcoming events.
@@ -15,7 +15,7 @@ To build a serverless, progressive web application (PWA) with React using a test
 ## Key Features, Test Scenarios, and Gherkin
 * Filter events by city. <br/><br/>
   * Scenario 1: When user hasn't searched for a city, show upcoming events from all cities.
-    * Given user hasn’t searched for any city
+    * Given no cities had been searched
     * When the user opens the app
     * Then the user should see a list of all upcoming events
   * Scenario 2: User should see a list of suggestions when they search for a city.
@@ -23,7 +23,7 @@ To build a serverless, progressive web application (PWA) with React using a test
     * When user starts typing in the city textbox
     * Then the user should see a list of cities (suggestions) that match what they’ve typed
   * Scenario 3: User can select a city from the suggested list.
-    * Given the user was typing “Berlin” in the city textbox 
+    * Given “Berlin” is being typed in the city textbox 
     * And the list of suggested cities is showing
     * When the user selects a city (e.g., “Berlin, Germany”) from the list
     * Then their city should be changed to that city (i.e., “Berlin, Germany”)
@@ -32,37 +32,37 @@ To build a serverless, progressive web application (PWA) with React using a test
 ---
 * Show/hide event details. <br/><br/>
   * Scenario 1: An event element is collapsed by default
-    * Given the user was viewing the event element for the first time
+    * Given the event element was being viewed for the first time
     * When the user scrolls down to a particular event
     * Then the user will only see some details about the event
   * Scenario 2: User can expand an event to see its details
-    * Given the user had not clicked the show details button
+    * Given the show details button had not been clicked 
     * And the details about the event were not showing
     * When the user clicks the show details button
     * Then the user will see more details about the event
   * Scenario 3: User can collapse an event to hide its details
-    * Given the user had clicked the show details button
+    * Given the show details button had been clicked
     * And the details about the event were showing
     * When the user clicks the hide details button
     * Then the user will see less details about the event
 ---
 * Specify number of events. <br/><br/>
   * Scenario 1: When user hasn’t specified a number, 10 is the default number
-    * Given the user did not specify a number of events to show
+    * Given the number of events to show had not been specified
     * When the user scrolls down to see the events
     * Then the user will see 10 events
   * Scenario 2: User can change the number of events they want to see
-    * Given the user had not changed a number of events to show
+    * Given the number of events to show had not been changed
     * When the user types in the number of events
     * Then the user will see the specified number of events
 ---
 * Use the app when offline. <br/><br/>
   * Scenario 1: Show cached data when there’s no internet connection
-    * Given the user did not have access to the internet
+    * Given the internet had not been accessed
     * When the user tries to open the app
     * Then the user will be able to use the app normally
   * Scenario 2: Show error when user changes the settings (city, time range)
-    * Given the user changed the settings (city, time range)
+    * Given the settings (city, time range) had been changed
     * When the user opens the app and uses the relevant features
     * Then the user will see a relevant error message 
 ---
@@ -70,7 +70,7 @@ To build a serverless, progressive web application (PWA) with React using a test
 ---
 * View a chart showing the number of upcoming events by city. <br/><br/>
   * Scenario 1: Show a chart with the number of upcoming events in each city
-    * Given the user specified a number of events
+    * Given the number of events had been specified
     * When the user scrolls down to see the data visualization of the events
     * Then the user will see a chart of upcoming events categorized by city
 
