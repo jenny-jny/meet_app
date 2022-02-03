@@ -2,7 +2,7 @@
 Latest update: 02.03.2022
 
 ## Project Description
-To build a serverless, progressive web application (PWA) with React using a test-driven development (TDD) technique. The application uses the Google Calendar API to fetch upcoming events.
+A serverless, progressive web application (PWA) built with React using test-driven development (TDD) techniques. The application uses the Google Calendar API to fetch upcoming events.
 
 ## User Stories
 * As a user, I would like to be able to filter events by city so that I can see the list of events that take place in that city.
@@ -87,7 +87,6 @@ Google Calendar API
 * Lighthouse's PWA checklist
 * service worker
 * AWS Lambda (serverless functions)
-* Google Calendar API
 * OAuth2 authentication flow
 * Behavior Driven Development (BDD)
 * Gherkin
@@ -105,9 +104,6 @@ Google Calendar API
 * data visualization
 * recharts
 * NProgress
-* W3C Validation
-* ESLint
-* Prettier
 
 ## Project Showcase
 https://jenny-jny.github.io/meet_app/
